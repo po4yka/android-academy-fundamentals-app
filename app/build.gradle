@@ -55,6 +55,6 @@ android {
 dependencies {
     implementation Libs.Kotlin.stdlib
     implementation Libs.AndroidX.coreKtx
-    implementation Libs.Design.material
-    implementation Libs.Design.constrains
+    implementation Libs.AndroidX.Design.material
+    implementation Libs.AndroidX.Design.constrains
 }
