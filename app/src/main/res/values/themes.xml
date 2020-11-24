@@ -14,9 +14,11 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="movie_title">
+    <style name="Theme.AndroidAcademyApp.NoActionBar">
         <item name="android:textColor">#ECECEC</item>
         <item name="android:textSize">40sp</item>
         <item name="android:textStyle">bold</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
     </style>
 </resources>
