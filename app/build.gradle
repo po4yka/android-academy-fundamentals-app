@@ -65,4 +65,4 @@ dependencies {
     androidTestImplementation Libs.AndroidX.Test.Ext.junit
 }
 
-apply from: 'ktlint.gradle'
+apply from: "ktlint.gradle"

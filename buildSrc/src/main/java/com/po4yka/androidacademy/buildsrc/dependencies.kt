@@ -6,8 +6,9 @@ object Versions {
 
 object Libs {
     const val androidGradlePlugin = "com.android.tools.build:gradle:4.1.1"
+    const val jdkSugar = "com.android.tools:desugar_jdk_libs:1.0.9"
+
     const val junit = "junit:junit:4.13"
-    const val spotless = "com.diffplug.spotless:spotless-plugin-gradle:5.8.2"
 
     object Kotlin {
         private const val version = "1.4.10"
@@ -17,7 +18,7 @@ object Libs {
     }
 
     object AndroidX {
-        const val coreKtx = "androidx.core:core-ktx:1.5.0-alpha04"
+        const val coreKtx = "androidx.core:core-ktx:1.3.2"
 
         object Design {
             const val material = "com.google.android.material:material:1.2.1"
@@ -30,7 +31,7 @@ object Libs {
             const val rules = "androidx.test:rules:$version"
 
             object Ext {
-                private const val version = "1.1.2-rc01"
+                private const val version = "1.1.2"
                 const val junit = "androidx.test.ext:junit-ktx:$version"
             }
 
