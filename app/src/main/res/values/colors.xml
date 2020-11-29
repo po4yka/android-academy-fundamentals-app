@@ -8,13 +8,20 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="back_button_text">#80FFFFFF</color>
+    <color name="text_regular">#BFFFFFFF</color>
+    <color name="text_header">#ECECEC</color>
     <color name="movie_desc">#FFFFFFFF</color>
     <color name="movie_cast">#FFFFFFFF</color>
     <color name="movie_title">#FFFFFFFF</color>
     <color name="movie_age_admission">#FFFFFFFF</color>
     <color name="back">#FFFFFFFF</color>
     <color name="main_background">#191926</color>
-    <color name="movie_type">#FF3466</color>
-    <color name="star_off">#6D6D80</color>
-    <color name="reviews">#6D6D80</color>
+    <color name="accent">#FF3466</color>
+    <color name="accent_disabled">#6D6D80</color>
+    <color name="text_under_image">#6D6D80</color>
+    <color name="view_card_border">#80000000</color>
+    <color name="view_card_background_end">#8C222232</color>
+    <color name="view_card_background_start">#FD404056</color>
+
 </resources>
