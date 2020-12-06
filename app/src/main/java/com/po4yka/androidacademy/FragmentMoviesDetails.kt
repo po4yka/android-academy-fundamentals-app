@@ -22,11 +22,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
+import com.po4yka.androidacademy.adapter.ActorAdapter
+import com.po4yka.androidacademy.model.Actor
 import com.po4yka.androidacademy.model.ChangeFragment
 
 class FragmentMoviesDetails : Fragment() {
 
     private var listener: ChangeFragment? = null
+    private var recycler: RecyclerView? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,9 +42,20 @@ class FragmentMoviesDetails : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.findViewById<Button>(R.id.back_btn).setOnClickListener {
+
+        recycler = view.findViewById(R.id.filmCastRecyclerView)
+        recycler?.adapter = ActorAdapter()
+        recycler?.hasFixedSize()
+
+        view.findViewById<Button>(R.id.backBtn).setOnClickListener {
             listener?.toMoviesList()
         }
+
+        setActorsData()
+    }
+
+    private fun setActorsData() {
+        (recycler?.adapter as? ActorAdapter)?.bindActor(actorsList)
     }
 
     override fun onAttach(context: Context) {
@@ -63,5 +78,12 @@ class FragmentMoviesDetails : Fragment() {
                     putString(ARG_MOVIE_ID, movieId)
                 }
             }
+
+        val actorsList = listOf(
+            Actor("Robert", "Downey Jr.", R.drawable.cast1),
+            Actor("Chris", "Evans", R.drawable.cast2),
+            Actor("Mark", "Ruffalo", R.drawable.cast3),
+            Actor("Chris", "Hemsworth", R.drawable.cast4)
+        )
     }
 }

@@ -16,17 +16,23 @@
 package com.po4yka.androidacademy
 
 import android.content.Context
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.google.android.material.card.MaterialCardView
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.po4yka.androidacademy.adapter.MovieAdapter
+import com.po4yka.androidacademy.adapter.OnMovieClickListener
 import com.po4yka.androidacademy.model.ChangeFragment
+import com.po4yka.androidacademy.model.Movie
 
 class FragmentMoviesList : Fragment() {
 
-    private var listener: ChangeFragment? = null
+    private var recycler: RecyclerView? = null
+    private var listenerFragment: ChangeFragment? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,18 +44,70 @@ class FragmentMoviesList : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        listener = context as? ChangeFragment
+        listenerFragment = context as? ChangeFragment
     }
 
     override fun onDetach() {
         super.onDetach()
-        listener = null
+        listenerFragment = null
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.findViewById<MaterialCardView>(R.id.card_view).setOnClickListener {
-            listener?.toMovieDetail()
+
+        // set recycler grid
+        recycler = view.findViewById(R.id.filmCastRecyclerView)
+        recycler?.adapter = MovieAdapter(movieListener)
+        recycler?.layoutManager = GridLayoutManager(context, getSpanCount())
+        recycler?.hasFixedSize()
+
+        setMovieData()
+    }
+
+    /**
+     * Count movies in line depend on screen orientation
+     */
+    private fun getSpanCount() =
+        when (resources.configuration.orientation) {
+            Configuration.ORIENTATION_LANDSCAPE -> 3
+            else -> 2
         }
+
+    private fun setMovieData() {
+        (recycler?.adapter as? MovieAdapter)?.apply {
+            bindMovie(moviesList)
+        }
+    }
+
+    private val movieListener = object : OnMovieClickListener {
+        override fun onClick(movie: Movie) {
+            listenerFragment?.toMovieDetail()
+        }
+    }
+
+    companion object {
+        val moviesList = listOf(
+            Movie(
+                title = "Avengers: End Game", rating = 4.0, posterImage = R.drawable.img_avengers,
+                genres = listOf("Action", "Adventure", "Drama"), reviews = 125,
+                duration = 137, ageRating = "13+", like = false
+            ),
+            Movie(
+                title = "Tenet", rating = 5.0, posterImage = R.drawable.img_tenet,
+                genres = listOf("Action", "Sci-Fi", "Thriller"), reviews = 98,
+                duration = 97, ageRating = "16+", like = true
+            ),
+            Movie(
+                title = "Black Widow", rating = 4.0, posterImage = R.drawable.img_black_widow,
+                genres = listOf("Action", "Adventure", "Sci-Fi"), reviews = 38,
+                duration = 102, ageRating = "13+", like = false
+            ),
+            Movie(
+                title = "Wonder Woman 1984", rating = 5.0, posterImage = R.drawable.img_wonder_woman_1984,
+                genres = listOf("Action", "Adventure", "Fantasy"), reviews = 74,
+                duration = 120, ageRating = "13+", like = false
+            )
+
+        )
     }
 }

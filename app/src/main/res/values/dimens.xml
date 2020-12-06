@@ -1,12 +1,10 @@
 <resources>
-    <dimen name="fab_margin">16dp</dimen>
 
     <!--  FONTS  -->
     <dimen name="tiny_text_size">8sp</dimen>
     <dimen name="small_text_size">12sp</dimen>
     <dimen name="normal_size">14sp</dimen>
     <dimen name="large_text_size">24sp</dimen>
-    <dimen name="name_text_size">40sp</dimen>
 
     <!--  ELEMENTS  -->
     <dimen name="actor_icon_size">80dp</dimen>
