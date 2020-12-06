@@ -23,6 +23,7 @@ object Libs {
         object Design {
             const val material = "com.google.android.material:material:1.2.1"
             const val constrains = "androidx.constraintlayout:constraintlayout:2.0.4"
+            const val fragment = "androidx.fragment:fragment-ktx:1.2.5"
         }
 
         object Test {

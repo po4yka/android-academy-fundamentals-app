@@ -4,6 +4,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -57,6 +58,7 @@ dependencies {
     implementation Libs.AndroidX.coreKtx
     implementation Libs.AndroidX.Design.material
     implementation Libs.AndroidX.Design.constrains
+    implementation Libs.AndroidX.Design.fragment
 
     androidTestImplementation Libs.junit
     androidTestImplementation Libs.AndroidX.Test.core
