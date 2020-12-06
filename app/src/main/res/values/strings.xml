@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Android Academy App</string>
     <string name="back">Back</string>
-    <string name="movie_page_open_btn">Open Movie Page</string>
 
     <string name="movie_description">After the devastating events of Avengers: Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos\' actions and restore balance to the universe.</string>
     <string name="movie_title">Avengers: End Game</string>
@@ -18,14 +17,15 @@
     <string name="storyline">Storyline</string>
     <string name="cast">Cast</string>
 
-    <!--  Placeholders  -->
-    <string name="actor_placeholder">Image of actor or actress</string>
-    <string name="main_poster_placeholder">Image of main poster</string>
-    <string name="like_icon_placeholder">image of like icon</string>
+    <!--  Reviews  -->
+    <plurals name="review">
+        <item quantity="one">%1$d review</item>
+        <item quantity="other">%1$d reviews</item>
+    </plurals>
+    <string name="duration_unit">%1$d min</string>
 
-    <!--  Cast  -->
-    <string name="robert_downey_jr">Robert Downey Jr.</string>
-    <string name="chris_evans">Chris Evans</string>
-    <string name="mark_ruffalo">Mark Ruffalo</string>
-    <string name="chris_hemsworth">Chris Hemsworth</string>
+    <!--  Placeholders  -->
+    <string name="actor_img_placeholder">Image of actor or actress</string>
+    <string name="main_poster_img_placeholder">Image of main poster</string>
+    <string name="like_icon_img_placeholder">Image of like icon</string>
 </resources>

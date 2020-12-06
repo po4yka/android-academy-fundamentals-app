@@ -46,8 +46,6 @@
     <style name="ImageViewActorStyle">
         <item name="android:layout_width">@dimen/actor_icon_size</item>
         <item name="android:layout_height">@dimen/actor_icon_size</item>
-        <item name="android:layout_marginTop">@dimen/view_medium_gap</item>
-        <item name="android:contentDescription">@string/actor_placeholder</item>
         <item name="android:scaleType">centerCrop</item>
     </style>
 
